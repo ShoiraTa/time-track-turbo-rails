@@ -90,7 +90,7 @@ h2{
 }
 
 h3{
-  font-size: 3rem!important;
+  font-size: 2.8rem!important;
   font-weight: 200!important;
 }
 
@@ -244,7 +244,40 @@ input{
   .navbar-brand{
     letter-spacing: 1px;
   }
+  @media only screen and (max-width: 982px){
+    .navbar-nav{
+      flex-direction: row!important;
+    }
+    .nav-link{
+      padding: 5px!important;
+    }
 
+    .activities-innercontainer{
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      gap: 1.2rem;
+      justify-content: center;
+    }
+
+    .activity-input-date, .activity-input-mins{
+      width: 90%;
+    }
+
+    .formaddactivity{
+      padding: 0;
+    }
+
+    .fa-arrow-left{
+      padding-left: 10px;
+    }
+
+    
+    h3{
+      font-size: 2rem!important;
+      font-weight: 200!important;
+    }
+
+}
   @media only screen and (max-width: 768px) {
     .activities-innercontainer{
       display: grid;
@@ -288,6 +321,6 @@ input{
       display: flex;
       justify-content: space-evenly;
       height: auto;
-    }    
-
+    }   
+  
   }

@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/">TrackIt</a>
-    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+    <div class=" justify-content-end" id="navbarSupportedContent">
       <% if current_user  %>
         <ul class="navbar-nav mr-auto">
           <%= current_user.name %>
@@ -29,3 +27,4 @@
     </div>
   </div>
 </nav>
+
