@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
   def lastName
     last =  self.name.split(' ')[1]
-    last.length > 10 ? last.slice(0, 10) : last
+    last.length > 10 ? last.slice(0, 10) : last if last 
   end
 
 end
