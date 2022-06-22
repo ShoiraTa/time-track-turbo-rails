@@ -1,20 +1,25 @@
-<div class="activities-innercontainer" id = "activities-innercontainer">
+<div class="activities-innercontainer" id = "activities-innercontainer" data-controller= "timelog">
   <% @activities.each do |activity| %>
 
-    <div class="activity-card" style="background-color: <%= activity.style %>">
-      <%= render partial: "timelogs/form", locals:{timelog: Timelog.new, current_activity: activity } %>
-      <div class="activity-card-sec"> 
+    <div class="activity-card" style="background-color: <%= activity.style %>" >
+      <div >
+        <%= render partial: "timelogs/form", locals:{timelog: Timelog.new, current_activity: activity } %>
+      </div>
+      <div class="activity-card-sec" data-timelog-target=<%= " #{activity.title.downcase}" %>> 
       <%= image_tag "icon-#{activity.title.downcase}.svg", width: '50' %>
       <div class="activity-inner">
         <div class="activity-header">
           <h4>
             <%= activity.title %>
           </h4>
-          <i class="fa-solid fa-ellipsis"></i>
+          <i  class="fa-solid fa-ellipsis" 
+              data-action="click->timelog#showCard"
+              data-timelog-payload-param = <%= activity.title%>
+              ></i>
         </div>
         <div class="activity body">
           <h3>
-            <%= activity.getCurrentLogs(timeframe) %>
+            <%= activity.getCurrentLogs(timeframe, current_user.id) %>
           </h3>
         </div>
         <div class="activity-footer">

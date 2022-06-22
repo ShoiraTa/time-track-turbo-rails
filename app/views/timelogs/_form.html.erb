@@ -1,36 +1,42 @@
-<%= form_with(model: timelog, html: {class: "formaddactivity"}) do |form| %>
-  <% if timelog.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(timelog.errors.count, "error") %> prohibited this timelog from being saved:</h2>
+<%= form_with(model: timelog, html: {class: "formaddactivity" }) do |form| %>
+<div>
+    <% if timelog.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(timelog.errors.count, "error") %> prohibited this timelog from being saved:</h2>
 
-      <ul>
-        <% timelog.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% timelog.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class='d-flex justify-content-between'> 
+    <i class="fa-solid fa-arrow-left mb-2" data-action="click->timelog#closeCard"
+          data-timelog-payload-param = <%= current_activity.title%> > </i>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div>
-    <%= form.hidden_field :activity_id, value: current_activity.id %>
-  </div>
-  <div class="activity-input"> 
+  
     <div>
-    <%= form.number_field :minutes, placeholder: "Minutes", class:"activity-input-mins" %>
-  </div>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
 
-  <div>
-    <%= form.date_field :date, class:"activity-input-date" %>
-  </div>
-  </div>
+    <div>
+      <%= form.hidden_field :activity_id, value: current_activity.id %>
+    </div>
+    <div class="activity-input"> 
+      <div>
+      <%= form.number_field :minutes, placeholder: "Minutes", class:"activity-input-mins" %>
+    </div>
+
+    <div>
+      <%= form.date_field :date, class:"activity-input-date" %>
+    </div>
+    </div>
 
 
 
-  <div>
-    <%= form.submit 'Add', class:"activity-submit"%>
+    <div >
+      <%= form.submit 'Add', class:"activity-submit"%>
+    </div>
   </div>
 <% end %>
