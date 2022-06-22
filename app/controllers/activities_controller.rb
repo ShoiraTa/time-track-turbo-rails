@@ -17,10 +17,14 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+  end
+
+  def update_timeframe
+    @activities = Activity.all
     respond_to do |format|
       format.turbo_stream do 
         render turbo_stream: [
-          turbo_stream.update('turbo_activities', partial:'activities/activity', locals: {timeframe: params[:timeframe]})
+          turbo_stream.append('turbo_activities', partial:'activities/activity', locals: {timeframe: params[:timeframe] })
         ]
       end
     end
@@ -43,15 +47,15 @@ class ActivitiesController < ApplicationController
 
   # PATCH/PUT /activities/1 or /activities/1.json
   def update
-    respond_to do |format|
-      if @activity.update(activity_params)
-        format.html { redirect_to activity_url(@activity), notice: "Activity was successfully updated." }
-        format.json { render :show, status: :ok, location: @activity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @activity.update(activity_params)
+    #     format.html { redirect_to activity_url(@activity), notice: "Activity was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @activity }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @activity.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /activities/1 or /activities/1.json

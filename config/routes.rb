@@ -9,10 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :users
-  get 'pages/index'
-  get 'pages/business'
-  get 'pages/teach'
-  get 'pages/terms'
+  post 'activities/update_timeframe'
   root "activities#index"
 end
 

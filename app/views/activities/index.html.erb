@@ -17,11 +17,11 @@
     </div>
     <div class="timeframes" >
       <% Activity::TIMEFRAMES.each do |timeframe|  %>
-        <%= button_to timeframe.capitalize(), edit_activity_path(timeframe:timeframe, id:1) %>
+        <%= button_to timeframe.capitalize(), activities_update_timeframe_path(timeframe:timeframe) %>
       <% end %>
     </div>
   </div>
   <div id="turbo_activities">
-    <%= render partial: 'activities/activity', locals: { timeframe: 'week'} %>
+    <%= render partial: 'activities/activity', locals: { timeframe: 'day'} %>
   </div>
 </div>

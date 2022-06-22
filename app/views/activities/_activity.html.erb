@@ -1,4 +1,4 @@
-<div class="activities-innercontainer">
+<div class="activities-innercontainer" id = "activities-innercontainer">
   <% @activities.each do |activity| %>
     <div class="activity-card" style="background-color: <%= activity.style %>">
       <%= image_tag "icon-#{activity.title.downcase}.svg", width: '50' %>
