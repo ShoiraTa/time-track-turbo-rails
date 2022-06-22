@@ -20,16 +20,14 @@ A project build using Ruby on Rails, where users can track their time spent on d
 
 ## Demo
 
-https://track-mytime.herokuapp.com/
+### [Live demo link](https://track-mytime.herokuapp.com/)
 
 ## Preview
 
 | Desktop | Mobile |
 | ------- | ------ |
+| <img width="1352" alt="Screenshot 2022-06-22 at 22 41 20" src="https://user-images.githubusercontent.com/77038610/175112423-b213e00b-6107-40cf-98f9-22e76e505913.png"> |<img width="421" alt="Screenshot 2022-06-22 at 22 42 13" src="https://user-images.githubusercontent.com/77038610/175112606-303b2174-baf8-43f9-aef5-68db4d75cc4e.png">
 
-| <img width="1352" alt="Screenshot 2022-06-22 at 22 41 20" src="https://user-images.githubusercontent.com/77038610/175112423-b213e00b-6107-40cf-98f9-22e76e505913.png">
-|<img width="421" alt="Screenshot 2022-06-22 at 22 42 13" src="https://user-images.githubusercontent.com/77038610/175112606-303b2174-baf8-43f9-aef5-68db4d75cc4e.png">
-|
 
 ## Getting Started
 
