@@ -28,6 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3rem;
  }
 
 
@@ -143,13 +144,6 @@ input{
   margin-top: 5px!important;
 }
 
-
-.btn-primary{
-  background-color: hsl(246, 80%, 60%)!important;
-  border: none!important;
-  margin-top: 2rem;
- }
-
  .timeframe-button{
   background-color: transparent;
   border: none;
@@ -160,10 +154,43 @@ input{
   color: #fff;
   }
 
-  /* form {
+  .btn-primary{
+    background-color: hsl(246, 80%, 60%)!important;
+    border: none!important;
+    margin-top: 2rem;
+    color: #fff;
+    width: 100px!important;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-top: 24px!important;
+
+   }
+
+  form {
     width: 500px  ;
    }
-   */
+
+  .new_user input, .edit_user input {
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #dadada;
+  }
+
+  .new_user input:focus, .edit_user input:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 6px #9ecaed;
+}
+
+  .new_user .field, .edit_user .field{
+    margin-top: 20px!important;
+  }
+
+  #user_image{
+    border: none;
+    padding: 0;
+  }
 
   .formaddactivity {
     width: auto;
@@ -202,4 +229,8 @@ input{
 
   i{
     cursor: pointer;
+  }
+
+  .navbar-brand{
+    letter-spacing: 1px;
   }

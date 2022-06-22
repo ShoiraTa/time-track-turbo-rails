@@ -3,7 +3,7 @@
     <div class="user-card">
       <div class="image-container">
         <% if current_user.image.attached? %>
-          <%= image_tag current_user.image,width:'60'  %>
+          <%= image_tag current_user.image,width:'70', height: '70'  %>
         <% else %>
           <%= image_tag 'avatar.webp',width:'60'  %>
         <% end %>

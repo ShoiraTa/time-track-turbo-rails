@@ -19,7 +19,8 @@ class User < ApplicationRecord
     self.name.split(' ')[0]
   end
   def lastName
-    self.name.split(' ')[1]
+    last =  self.name.split(' ')[1]
+    last.length > 10 ? name.slice(0, 10) : last
   end
 
 end
