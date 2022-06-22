@@ -190,6 +190,7 @@ input{
     outline: none;
     padding: 0 5px;
     margin: 10px 0;
+    cursor: pointer;
   }
 
   .activity-submit{
@@ -199,4 +200,6 @@ input{
     font-weight: 200;
   }
 
-  
+  i{
+    cursor: pointer;
+  }

@@ -12,10 +12,12 @@
           <h4>
             <%= activity.title %>
           </h4>
-          <i  class="fa-solid fa-ellipsis" 
-              data-action="click->timelog#showCard"
-              data-timelog-payload-param = <%= activity.title%>
-              ></i>
+          <div class="icon-container">
+            <i  class="fa-solid fa-plus" 
+                data-action="click->timelog#showCard"
+                data-timelog-payload-param = <%= activity.title%>
+                ></i>
+          </div>
         </div>
         <div class="activity body">
           <h3>
@@ -24,7 +26,7 @@
         </div>
         <div class="activity-footer">
           <p>
-            <%= "Last #{timeframe} - #{activity.getPrevLogs(timeframe)}" %>
+            <%= "Last #{timeframe} - #{activity.getPrevLogs(timeframe, current_user.id)}" %>
           </p>
         </div>
       </div>
