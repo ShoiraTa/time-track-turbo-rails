@@ -18,6 +18,7 @@
   /* font-family: 'DM Sans', sans-serif!important; */
   font-family: 'Rubik', sans-serif;
   background-color:   hsl(226, 43%, 10%)!important ;
+  box-sizing: border-box;
   /* letter-spacing: 1px; */
  }
 
@@ -114,6 +115,7 @@ p{
   border-radius: 15px;
   background-color:hsl(235, 46%, 20%);
   margin-right: 2rem;
+  height: 430px;
 }
 
 .user-card{
@@ -170,6 +172,10 @@ input{
     width: 500px  ;
    }
 
+  .timeframes form {
+    width: auto;
+  }
+
   .new_user input, .edit_user input {
     width: 100%;
     padding: 7px;
@@ -225,6 +231,10 @@ input{
     border: none;
     color: #fff;
     font-weight: 200;
+    border-radius: 4px;
+  }
+  .activity-submit:hover {
+    background-color: hsl(246, 80%, 63%)!important;
   }
 
   i{
@@ -233,4 +243,51 @@ input{
 
   .navbar-brand{
     letter-spacing: 1px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .activities-innercontainer{
+      display: grid;
+      grid-template-columns: repeat(2, 150px);
+      gap: 1.2rem;
+      justify-content: center;
+    }
+    .activity-input-date, .activity-input-mins{
+      width: 90%;
+    }
+
+    .formaddactivity{
+      padding: 0;
+    }
+
+    .fa-arrow-left{
+      padding-left: 10px;
+    }
+
+    
+    h3{
+      font-size: 2rem!important;
+      font-weight: 200!important;
+    }
+    
+    h4{
+      font-size: 0.7rem!important;
+    }
+
+    .activities-container{
+      flex-direction: column;
+    }
+
+    .user-container{
+      height: 270px;
+      width: 80%;
+      margin: 1rem auto;
+    }
+
+    .user-card{
+      display: flex;
+      justify-content: space-evenly;
+      height: auto;
+    }    
+
   }

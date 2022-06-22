@@ -8,12 +8,14 @@
           <%= image_tag 'avatar.webp',width:'60'  %>
         <% end %>
       </div>
+      <div> 
       <p>Report for</p>
       <h2>
         <%= current_user.getName  %>
         <br/>
         <%= current_user.lastName %>
       </h2>
+      </div>
     </div>
     <div class="timeframes" >
       <% Activity::TIMEFRAMES.each do |timeframe|  %>
