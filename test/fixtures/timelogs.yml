@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  activity: one
+  minutes: 1
+  date: 2022-06-22
+
+two:
+  user: two
+  activity: two
+  minutes: 1
+  date: 2022-06-22

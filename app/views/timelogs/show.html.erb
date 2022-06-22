@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @timelog %>
+
+<div>
+  <%= link_to "Edit this timelog", edit_timelog_path(@timelog) %> |
+  <%= link_to "Back to timelogs", timelogs_path %>
+
+  <%= button_to "Destroy this timelog", @timelog, method: :delete %>
+</div>

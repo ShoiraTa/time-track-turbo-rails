@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :timelogs
+  resources :activities
   devise_for :views
   devise_for :users
   resources :messages

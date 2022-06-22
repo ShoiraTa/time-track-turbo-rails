@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Timelogs</h1>
+
+<div id="timelogs">
+  <% @timelogs.each do |timelog| %>
+    <%= render timelog %>
+    <p>
+      <%= link_to "Show this timelog", timelog %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New timelog", new_timelog_path %>
