@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :activities
-  has_one_attached :image
+  has_one_attached :image 
+  
+  def image_thumbnail 
+    image.variant.resize('150X150!').processed
+  end
 
   def to_s
     name

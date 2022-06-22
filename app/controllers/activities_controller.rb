@@ -17,6 +17,13 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+    respond_to do |format|
+      format.turbo_stream do 
+        render turbo_stream: [
+          turbo_stream.update('turbo_activities', partial:'activities/activity', locals: {timeframe: params[:timeframe]})
+        ]
+      end
+    end
   end
 
   # POST /activities or /activities.json

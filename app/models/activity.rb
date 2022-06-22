@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :user
-  has_many :timelogs
+  has_many :timelogs, dependent: :destroy
   
   TIMEFRAMES= [:day, :week, :month]
 

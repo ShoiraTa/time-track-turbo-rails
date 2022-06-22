@@ -1,17 +1,25 @@
-<div id="<%= dom_id activity %>">
-  <p>
-    <strong>User:</strong>
-    <%= activity.user_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= activity.title %>
-  </p>
-
-  <p>
-    <strong>Style:</strong>
-    <%= activity.style %>
-  </p>
-
+<div class="activities-innercontainer">
+  <% @activities.each do |activity| %>
+    <div class="activity-card" style="background-color: <%= activity.style %>">
+      <%= image_tag "icon-#{activity.title.downcase}.svg", width: '50' %>
+      <div class="activity-inner">
+        <div class="activity-header">
+          <h4>
+            <%= activity.title %>
+          </h4>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="activity body">
+          <h3>
+            <%= activity.getCurrentLogs(timeframe) %>
+          </h3>
+        </div>
+        <div class="activity-footer">
+          <p>
+            <%= "Last #{timeframe} - #{activity.getPrevLogs(timeframe)}" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

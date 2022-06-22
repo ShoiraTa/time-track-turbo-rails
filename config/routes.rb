@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  resources :timelogs
-  resources :activities
-  devise_for :views
-  devise_for :users
   resources :messages
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :timelogs
+  resources :activities do
+    member do 
+      post :edit
+      # post :index
+    end
+  end
+  devise_for :users
+  resources :users
+  get 'pages/index'
+  get 'pages/business'
+  get 'pages/teach'
+  get 'pages/terms'
+  root "activities#index"
 end
+

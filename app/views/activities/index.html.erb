@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Activities</h1>
-
-<div id="activities">
-  <% @activities.each do |activity| %>
-    <%= render activity %>
-    <p>
-      <%= link_to "Show this activity", activity %>
-    </p>
-  <% end %>
+<div class="activities-container">
+  <div class="user-container">
+    <div class="user-card">
+      <div class="image-container">
+        <% if current_user.image.attached? %>
+          <%= image_tag current_user.image,width:'60'  %>
+        <% else %>
+          <%= image_tag 'avatar.webp',width:'60'  %>
+        <% end %>
+      </div>
+      <p>Report for</p>
+      <h2>
+        <%= current_user.getName  %>
+        <br/>
+        <%= current_user.lastName %>
+      </h2>
+    </div>
+    <div class="timeframes" >
+      <% Activity::TIMEFRAMES.each do |timeframe|  %>
+        <%= button_to timeframe.capitalize(), edit_activity_path(timeframe:timeframe, id:1) %>
+      <% end %>
+    </div>
+  </div>
+  <div id="turbo_activities">
+    <%= render partial: 'activities/activity', locals: { timeframe: 'week'} %>
+  </div>
 </div>
-
-<%= link_to "New activity", new_activity_path %>

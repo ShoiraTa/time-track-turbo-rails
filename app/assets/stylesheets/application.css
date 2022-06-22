@@ -13,3 +13,139 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+  /* font-family: 'DM Sans', sans-serif!important; */
+  font-family: 'Rubik', sans-serif;
+  background-color:   hsl(226, 43%, 10%)!important ;
+  /* letter-spacing: 1px; */
+ }
+
+
+ .container-inner{
+  color: #fff;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ form {
+  width: 500px  ;
+ }
+
+ .form-group{
+  margin-top: 1rem;
+ }
+
+.nav-button{
+  border: none;
+  background: none;
+  float: right;
+}
+
+.activities-container{
+  display: flex;
+}
+
+.activities-innercontainer{
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 2rem;
+}
+.activity-card{
+  height: 200px;
+  background-color:  hsl(15, 100%, 70%);
+  background-image: url("../images/icon-exercise.svg");
+  display: flex;
+  align-items: end;
+  border-radius: 15px;
+  position: relative;
+}
+
+.activity-card img{
+  position: absolute;
+  top: 0px;
+    right: 20px;
+}
+.activity-inner{
+  width: 100%;
+  padding: 1.3rem;
+  height: 170px;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+h2{
+  font-size: 2.3rem!important;
+  font-weight: 200!important;
+  margin-top: 5px;
+}
+
+h3{
+  font-size: 3rem!important;
+  font-weight: 200!important;
+}
+
+h4{
+  font-size: 1rem!important;
+}
+
+p{
+  font-size: 0.7rem;
+  color: hsl(236, 100%, 87%);
+  margin: 0!important
+}
+
+.activity-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-container{
+  width: 200px;
+  border-radius: 15px;
+  background-color:hsl(235, 46%, 20%);
+  margin-right: 2rem;
+}
+
+.user-card{
+  background-color: hsl(246, 80%, 60%);
+  padding: 1.3rem;
+  border-radius: 15px;
+  height: 70%;
+}
+
+.image-container{
+  height: 100px;
+}
+
+.timeframes{
+  padding: 1.3rem;
+}
+
+.timeframes p {
+  height: 2rem
+}
+
+.image-container img {
+  border-radius: 100%;
+    border: 2px solid #fff;
+}
+
+input{
+  margin-top: 5px!important;
+}
+
+
+.btn-primary{
+  background-color: hsl(246, 80%, 60%)!important;
+  border: none!important;
+  margin-top: 2rem;
+ }
