@@ -30,9 +30,6 @@
   justify-content: center;
  }
 
- form {
-  width: 500px  ;
- }
 
  .form-group{
   margin-top: 1rem;
@@ -58,7 +55,8 @@
   background-color:  hsl(15, 100%, 70%);
   background-image: url("../images/icon-exercise.svg");
   display: flex;
-  align-items: end;
+  /* align-items: end; */
+  flex-direction: column;
   border-radius: 15px;
   position: relative;
 }
@@ -149,3 +147,52 @@ input{
   border: none!important;
   margin-top: 2rem;
  }
+
+ .timeframe-button{
+  background-color: transparent;
+  border: none;
+  color: hsl(236, 100%, 87%);
+ }
+
+ .timeframe-button:active, .timeframe-button:hover{
+  color: #fff;
+  }
+
+  /* form {
+    width: 500px  ;
+   }
+   */
+
+  .formaddactivity {
+    width: auto;
+    padding: 10px;
+    /* position: absolute; */
+  }
+
+  .activity-input{
+    /* display: flex; */
+
+  }
+  .activity-input-mins::placeholder{
+    color: #fff;
+  }
+
+
+  .activity-input-date,   .activity-input-mins{
+    width: 120px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 3px;
+  }
+
+  .activity-submit{
+    background-color: hsl(246, 80%, 60%)!important;
+    border: none;
+    color: #fff;
+    font-weight: 200;
+  }
+
+  

@@ -17,7 +17,7 @@
     </div>
     <div class="timeframes" >
       <% Activity::TIMEFRAMES.each do |timeframe|  %>
-        <%= button_to timeframe.capitalize(), activities_update_timeframe_path(timeframe:timeframe) %>
+        <%= button_to timeframe.capitalize(), activities_update_timeframe_path(timeframe:timeframe), class:"timeframe-button" %>
       <% end %>
     </div>
   </div>

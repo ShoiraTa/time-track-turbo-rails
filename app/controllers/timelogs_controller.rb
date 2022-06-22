@@ -22,14 +22,22 @@ class TimelogsController < ApplicationController
   # POST /timelogs or /timelogs.json
   def create
     @timelog = Timelog.new(timelog_params)
-
+    @activities = Activity.all
     respond_to do |format|
       if @timelog.save
-        format.html { redirect_to timelog_url(@timelog), notice: "Timelog was successfully created." }
-        format.json { render :show, status: :created, location: @timelog }
+        format.turbo_stream do 
+          render turbo_stream: [
+            # turbo_stream.update('new_message', partial:'messages/form', locals: {message: Message.new}),
+            turbo_stream.update('turbo_activities', partial:'activities/activity', locals: {timeframe: 'day' }),
+          ]
+        end
+
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @timelog.errors, status: :unprocessable_entity }
+        format.turbo_stream do 
+          render turbo_stream: [
+            turbo_stream.update('turbo_activities', partial:'activities/activity', locals: {timeframe: 'day' }),
+          ]
+        end
       end
     end
   end

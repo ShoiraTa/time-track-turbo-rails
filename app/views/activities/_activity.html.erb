@@ -1,6 +1,9 @@
 <div class="activities-innercontainer" id = "activities-innercontainer">
   <% @activities.each do |activity| %>
+
     <div class="activity-card" style="background-color: <%= activity.style %>">
+      <%= render partial: "timelogs/form", locals:{timelog: Timelog.new, current_activity: activity } %>
+      <div class="activity-card-sec"> 
       <%= image_tag "icon-#{activity.title.downcase}.svg", width: '50' %>
       <div class="activity-inner">
         <div class="activity-header">
@@ -19,6 +22,7 @@
             <%= "Last #{timeframe} - #{activity.getPrevLogs(timeframe)}" %>
           </p>
         </div>
+      </div>
       </div>
     </div>
   <% end %>

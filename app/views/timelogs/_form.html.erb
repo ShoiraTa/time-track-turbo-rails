@@ -1,4 +1,4 @@
-<%= form_with(model: timelog) do |form| %>
+<%= form_with(model: timelog, html: {class: "formaddactivity"}) do |form| %>
   <% if timelog.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(timelog.errors.count, "error") %> prohibited this timelog from being saved:</h2>
@@ -12,26 +12,25 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div>
-    <%= form.label :activity_id, style: "display: block" %>
-    <%= form.text_field :activity_id %>
+    <%= form.hidden_field :activity_id, value: current_activity.id %>
+  </div>
+  <div class="activity-input"> 
+    <div>
+    <%= form.number_field :minutes, placeholder: "Minutes", class:"activity-input-mins" %>
   </div>
 
   <div>
-    <%= form.label :minutes, style: "display: block" %>
-    <%= form.number_field :minutes %>
+    <%= form.date_field :date, class:"activity-input-date" %>
+  </div>
   </div>
 
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
+
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Add', class:"activity-submit"%>
   </div>
 <% end %>

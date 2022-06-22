@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.image_tag(resource.image.image_thumbnail)%>
+    <%= f.file_field :image %>
   </div>  
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

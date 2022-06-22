@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
     respond_to do |format|
       format.turbo_stream do 
         render turbo_stream: [
-          turbo_stream.append('turbo_activities', partial:'activities/activity', locals: {timeframe: params[:timeframe] })
+          turbo_stream.update('turbo_activities', partial:'activities/activity', locals: {timeframe: params[:timeframe] })
         ]
       end
     end
